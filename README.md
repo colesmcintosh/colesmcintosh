@@ -1,6 +1,3 @@
-## 👨‍💻 About Me
-I'm a multifaceted engineer specializing in Automation, AI Integration, and Predictive Analytics, based in Denver, CO. Currently working at Pay Ready, I focus on building innovative solutions that leverage cutting-edge technologies.
-
 ## 🔭 Current Focus
 - Building and optimizing Large Language Model applications
 - Developing RAG (Retrieval-Augmented Generation) systems
