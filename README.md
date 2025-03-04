@@ -1,13 +1,16 @@
 ## 🔥 Most Recent Projects
+- [entropy-injection-cot](https://github.com/colesmcintosh/entropy-injection-cot) - Enhancing LLM reasoning through entropy injection in chain-of-thought prompting
 - [langchain-salesforce](https://github.com/colesmcintosh/langchain-salesforce) - Salesforce integration for LangChain, enabling seamless CRM data access
-- [chain-of-thought-reranking](https://github.com/colesmcintosh/chain-of-thought-reranking) - Optimizing LLM responses through CoT extraction and reranking
-- [aws-knowledge-base-rag](https://github.com/colesmcintosh/aws-knowledge-base-rag) - Implementation of AWS Bedrock Knowledge Base with RetrieveAndGenerate API
-- Contributing to [langchain](https://github.com/langchain-ai/langchain) - A framework for building LLM applications
+- [llama-kernel](https://github.com/colesmcintosh/llama-kernel) - Performance optimizations for Llama models with benchmarking for various hardware configurations
+- [agent-protocol](https://github.com/colesmcintosh/agent-protocol) - Implementation of standardized agent communication protocols
+- Contributing to [litellm](https://github.com/colesmcintosh/litellm) - a unified API for LLM providers with advanced proxy capabilities
 - Contributing to [smolagents](https://github.com/huggingface/smolagents) - A lightweight library for Python-based AI agents
-- Contributing to [unsloth](https://github.com/unslothai/unsloth) - Optimization toolkit for LLM fine-tuning
+- Contributing to [goose](https://github.com/colesmcintosh/goose) - An extensible AI agent framework with advanced capabilities
 
 ## 🔭 Current Focus
 - Building and optimizing Large Language Model applications
-- Developing RAG (Retrieval-Augmented Generation) systems
-- Working on AWS-based knowledge solutions
-- Contributing to open-source AI/ML projects
+- Developing agent frameworks and standardized protocols
+- Implementing advanced RAG (Retrieval-Augmented Generation) systems
+- Performance optimization for LLM inference and fine-tuning
+- Contributing to open-source AI/ML projects with a focus on agent systems
+- Enhancing LLM reasoning capabilities through novel prompting techniques
