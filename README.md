@@ -1,5 +1,3 @@
-# LLM Research & Development Portfolio
-
 ## Core Research Projects
 
 ### Entropy Injection for Chain-of-Thought
