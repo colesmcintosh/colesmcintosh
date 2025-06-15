@@ -1,4 +1,4 @@
-# LLMs, Multi-Agent Systems, and AI Research
+# AI Research & Development
 
 Contributor to [LiteLLM](https://github.com/colesmcintosh/litellm) and creator of the official [LangChain Salesforce Integration](https://github.com/colesmcintosh/langchain-salesforce).
 
