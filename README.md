@@ -12,4 +12,4 @@ Contributor to [LiteLLM](https://github.com/colesmcintosh/litellm) and creator o
 - [logit-control](https://github.com/colesmcintosh/logit-control): Control LLM token generation by manipulating logits for structured outputs using Hugging Face Transformers.
 - [social-media-agent-system](https://github.com/colesmcintosh/social-media-agent-system): Multi-agent system combining specialized AI agents for engaging social media content creation.
 
-⭐ Explore and star your favorites!
+Explore and star your favorites!
