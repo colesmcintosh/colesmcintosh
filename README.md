@@ -2,7 +2,7 @@
 
 Active contributor to [LiteLLM](https://github.com/colesmcintosh/litellm) and author of [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce).
 
-**Research Focus:** Building scalable multi-agent systems, optimizing high-performance LLMs, and advancing vector search with similarity optimization techniques.
+Building scalable multi-agent systems, optimizing high-performance LLMs, and advancing vector search with similarity optimization techniques.
 
 ## Featured Projects
 - [chain-of-thought-reranking](https://github.com/colesmcintosh/chain-of-thought-reranking): Enhancing LLM output quality through internal chain-of-thought extraction, reranking, and refinement.
