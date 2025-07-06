@@ -1,6 +1,6 @@
 # AI Research & Development
 
-Active contributor to [LiteLLM](https://github.com/colesmcintosh/litellm) and author of [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce).
+Active contributor to [LiteLLM](https://github.com/BerriAI/litellm) with 10+ merged PRs and author of [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce).
 
 Building scalable multi-agent systems, optimizing high-performance LLMs, and advancing vector search with similarity optimization techniques.
 
@@ -11,5 +11,9 @@ Building scalable multi-agent systems, optimizing high-performance LLMs, and adv
 - [pycuda-numpy-vector-ops](https://github.com/colesmcintosh/pycuda-numpy-vector-ops): GPU-accelerated NumPy vector operations using PyCUDA within Jupyter environments.
 - [logit-control](https://github.com/colesmcintosh/logit-control): Precision control over LLM token generation through logit manipulation for structured outputs via Hugging Face Transformers.
 - [social-media-agent-system](https://github.com/colesmcintosh/social-media-agent-system): Intelligent multi-agent framework leveraging specialized AI agents for dynamic social media content creation.
+
+## Recent Updates
+- **chain-of-thought-reranking**: Added requirements.txt, improved documentation, and fixed repository organization
+- **langchain-salesforce**: Enhanced error handling and async support (v0.2.1)
 
 Star the ones that interest you!
