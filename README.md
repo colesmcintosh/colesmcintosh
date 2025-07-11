@@ -1,6 +1,6 @@
 # AI Research & Development
 
-Active contributor to [LiteLLM](https://github.com/BerriAI/litellm) with 10+ merged PRs and author of [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce).
+Active contributor to [LiteLLM](https://github.com/BerriAI/litellm) with 50+ merged PRs and author of [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce).
 
 Building scalable multi-agent systems, optimizing high-performance LLMs, and advancing vector search with similarity optimization techniques.
 
