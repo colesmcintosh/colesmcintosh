@@ -1,13 +1,9 @@
 # Scalable AI Agents and LLM Solutions
 
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?logo=go\&logoColor=white)
 ![CUDA](https://img.shields.io/badge/CUDA-76B900?logo=nvidia\&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?logo=go\&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript\&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?logo=react\&logoColor=black)
-![LangChain](https://img.shields.io/badge/LangChain-121D33?logo=langchain\&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface\&logoColor=black)
-![Salesforce](https://img.shields.io/badge/Salesforce-00A1E0?logo=salesforce\&logoColor=white)
 
 ---
 
