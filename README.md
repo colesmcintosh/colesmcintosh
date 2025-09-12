@@ -1,9 +1,8 @@
 # Scalable AI Agents and LLM Solutions
 
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=white)
-![CUDA](https://img.shields.io/badge/CUDA-76B900?logo=nvidia\&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?logo=go\&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript\&logoColor=white)
+![CUDA](https://img.shields.io/badge/CUDA-76B900?logo=nvidia\&logoColor=white)
 
 ---
 
