@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
 
-Found of [Mellow AI](https://staymellow.ai) — delivering pragmatic AI strategy, custom solutions & tools so that businesses can leverage AI with clarity, speed, and reliability.
+Founder of [Mellow AI](https://staymellow.ai) — delivering pragmatic AI strategy, custom solutions & tools so that businesses can leverage AI with clarity, speed, and reliability.
 
 Active contributor to [LiteLLM](https://github.com/BerriAI/litellm) with **50+ merged PRs**, and creator of [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce).
 
