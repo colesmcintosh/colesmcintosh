@@ -16,15 +16,15 @@ Specializing in LLMs and AI, I build end-to-end applications spanning modern fro
 ### Open Source Contributions
 | Project | Description |
 | :--- | :--- |
-| [LangChain](https://www.langchain.com/) | Framework for building LLM-powered applications and agents |
-| [Goose](https://www.colemcintosh.io/) | Block's open source initiative for AI Agents |
-| [Smol Agents](https://www.colemcintosh.io/) | Huggingface's project for lightweight, efficient AI agents |
-| [LiteLLM](https://www.colemcintosh.io/) | Open-source LLM Gateway for 100+ LLM APIs |
+| <a href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer">LangChain</a> | Framework for building LLM-powered applications and agents |
+| <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">Goose</a> | Block's open source initiative for AI Agents |
+| <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">Smol Agents</a> | Huggingface's project for lightweight, efficient AI agents |
+| <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">LiteLLM</a> | Open-source LLM Gateway for 100+ LLM APIs |
 
 ---
 
 <div align="center">
-  <a href="https://www.colemcintosh.io/">Website</a> &bull; 
-  <a href="https://github.com/colemcintosh6">GitHub</a> &bull; 
-  <a href="mailto:contact@colemcintosh.io">Contact</a>
+  <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">Website</a> &bull; 
+  <a href="https://github.com/colemcintosh6" target="_blank" rel="noopener noreferrer">GitHub</a> &bull; 
+  <a href="mailto:contact@colemcintosh.io" target="_blank" rel="noopener noreferrer">Contact</a>
 </div>
