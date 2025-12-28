@@ -3,8 +3,6 @@
   <p><strong>Full Stack Engineer & Founder</strong></p>
 </div>
 
----
-
 ### Profile
 Specializing in LLMs and AI, I build end-to-end applications spanning modern front-end interfaces and scalable back-end systems. I architect AI-powered solutions including agentic workflows, RAG pipelines, and LLM-based data extraction frameworks. I work across the full technology stack, deploying production systems on AWS, Azure, and GCP, and contribute to open-source AI frameworks that reduce complexity through clear abstractions and intentional design.
 
