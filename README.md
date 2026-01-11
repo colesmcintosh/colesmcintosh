@@ -4,7 +4,7 @@
 </div>
 
 ### About
-Specializing in LLMs and AI, I build end-to-end applications spanning modern front-end interfaces and scalable back-end systems. I architect AI-powered solutions including agentic workflows, RAG pipelines, and LLM-based data extraction frameworks. I work across the full technology stack, deploying production systems on AWS, Azure, and GCP, and contribute to open-source AI frameworks that reduce complexity through clear abstractions and intentional design.
+Full stack engineer specializing in LLMs and AI, building end-to-end applications that span modern front-end interfaces and scalable back-end systems. Focused on AI-powered solutions including agentic workflows, RAG pipelines, and LLM-based data extraction frameworks. Experienced across the full technology stack, deploying production systems on AWS, Azure, and GCP while contributing to open-source AI frameworks that reduce complexity through clear abstractions and intentional design. Creator of Open Xtract, a library for LLM-powered structured data extraction with durable execution.
 
 ### Tech Stack
 **Languages & Frameworks**
@@ -16,8 +16,8 @@ Specializing in LLMs and AI, I build end-to-end applications spanning modern fro
 ### Open Source Contributions
 | Project | Description |
 | :--- | :--- |
+| <a href="https://github.com/Mellow-Artificial-Intelligence/open-xtract" target="_blank" rel="noopener noreferrer">Open Xtract</a> | Extract structured data from documents, images, audio, and video using LLMs with durable execution |
 | <a href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer">LangChain</a> | Framework for building LLM-powered applications and agents |
-| <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">Goose</a> | Block's open source initiative for AI Agents |
 | <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">Smol Agents</a> | Huggingface's project for lightweight, efficient AI agents |
 | <a href="https://www.colemcintosh.io/" target="_blank" rel="noopener noreferrer">LiteLLM</a> | Open-source LLM Gateway for 100+ LLM APIs |
 
