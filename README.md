@@ -45,11 +45,3 @@ Building AI systems that earn trust — agents, RAG, and structured extraction.
 [![SmolAgents](https://img.shields.io/badge/SmolAgents-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://github.com/huggingface/smolagents)
 [![LiteLLM](https://img.shields.io/badge/LiteLLM-091F40?style=flat-square&logoColor=white)](https://github.com/BerriAI/litellm)
 [![Pydantic AI](https://img.shields.io/badge/Pydantic_AI-E92063?style=flat-square&logo=pydantic&logoColor=white)](https://github.com/pydantic/pydantic-ai)
-
----
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=colesmcintosh&show_icons=true&hide_border=true&theme=transparent&hide=issues&count_private=true)
-
-</div>
