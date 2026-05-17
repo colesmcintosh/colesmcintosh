@@ -42,7 +42,8 @@ Building AI systems that earn trust — agents, RAG, and structured extraction.
 
 ### Open Source Contributions
 
-[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://github.com/langchain-ai/langchain)
-[![SmolAgents](https://img.shields.io/badge/SmolAgents-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://github.com/huggingface/smolagents)
-[![LiteLLM](https://img.shields.io/badge/LiteLLM-091F40?style=flat-square&logoColor=white)](https://github.com/BerriAI/litellm)
-[![Pydantic AI](https://img.shields.io/badge/Pydantic_AI-E92063?style=flat-square&logo=pydantic&logoColor=white)](https://github.com/pydantic/pydantic-ai)
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://github.com/langchain-ai/langchain/pulls?q=is%3Apr+author%3Acolesmcintosh+is%3Amerged)
+[![SmolAgents](https://img.shields.io/badge/SmolAgents-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://github.com/huggingface/smolagents/pulls?q=is%3Apr+author%3Acolesmcintosh+is%3Amerged)
+[![LiteLLM](https://img.shields.io/badge/LiteLLM-091F40?style=flat-square&logoColor=white)](https://github.com/BerriAI/litellm/pulls?q=is%3Apr+author%3Acolesmcintosh+is%3Amerged)
+[![Pydantic AI](https://img.shields.io/badge/Pydantic_AI-E92063?style=flat-square&logo=pydantic&logoColor=white)](https://github.com/pydantic/pydantic-ai/pulls?q=is%3Apr+author%3Acolesmcintosh+is%3Amerged)
+[![Goose](https://img.shields.io/badge/Goose-000000?style=flat-square&logoColor=white)](https://github.com/aaif-goose/goose/pulls?q=is%3Apr+author%3Acolesmcintosh+is%3Amerged)
