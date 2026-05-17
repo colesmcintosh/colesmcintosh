@@ -6,8 +6,8 @@
 
 Building AI systems that earn trust — agents, RAG, and structured extraction.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-colemcintosh.io-0A0A0A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.colemcintosh.io/)
-[![Mellow AI](https://img.shields.io/badge/Mellow_AI-staymellow.ai-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://staymellow.ai/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-colemcintosh.io-0A0A0A?style=for-the-badge)](https://www.colemcintosh.io/)
+[![Mellow AI](https://img.shields.io/badge/Mellow_AI-staymellow.ai-0A0A0A?style=for-the-badge)](https://staymellow.ai/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/colemcintosh/)
 [![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cole@staymellow.ai)
 
@@ -44,6 +44,7 @@ Building AI systems that earn trust — agents, RAG, and structured extraction.
 [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://github.com/langchain-ai/langchain)
 [![SmolAgents](https://img.shields.io/badge/SmolAgents-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://github.com/huggingface/smolagents)
 [![LiteLLM](https://img.shields.io/badge/LiteLLM-091F40?style=flat-square&logoColor=white)](https://github.com/BerriAI/litellm)
+[![Pydantic AI](https://img.shields.io/badge/Pydantic_AI-E92063?style=flat-square&logo=pydantic&logoColor=white)](https://github.com/pydantic/pydantic-ai)
 
 ---
 
