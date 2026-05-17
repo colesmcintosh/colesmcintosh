@@ -6,8 +6,8 @@
 
 Building AI systems that earn trust — agents, RAG, and structured extraction.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-colemcintosh.io-0A0A0A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.colemcintosh.io/)
-[![Mellow AI](https://img.shields.io/badge/Mellow_AI-staymellow.ai-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://staymellow.ai/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-colemcintosh.io-0A0A0A?style=for-the-badge)](https://www.colemcintosh.io/)
+[![Mellow AI](https://img.shields.io/badge/Mellow_AI-staymellow.ai-0A0A0A?style=for-the-badge)](https://staymellow.ai/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/colemcintosh/)
 [![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cole@staymellow.ai)
 
