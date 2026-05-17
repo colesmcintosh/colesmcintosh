@@ -2,76 +2,53 @@
 
 # Cole McIntosh
 
-Most software exists to hide complexity.<br/>I'd rather make it disappear.
+**Full Stack Engineer & Founder**
 
-Full Stack Engineer & Founder -- I design systems where AI does the heavy lifting<br/>and the interfaces make it feel effortless.
+Building AI systems that earn trust — agents, RAG, and structured extraction.
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-000?style=flat-square&logo=googlechrome&logoColor=white)](https://www.colemcintosh.io/) [![Mellow AI](https://img.shields.io/badge/Mellow_AI-000?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01eiIvPjxwYXRoIGQ9Ik0yIDE3bDEwIDUgMTAtNSIvPjxwYXRoIGQ9Ik0yIDEybDEwIDUgMTAtNSIvPjwvc3ZnPg==&logoColor=white)](https://staymellow.ai/) [![GitHub](https://img.shields.io/badge/GitHub-000?style=flat-square&logo=github&logoColor=white)](https://github.com/colesmcintosh) [![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/colemcintosh/) [![Email](https://img.shields.io/badge/Say_Hi-000?style=flat-square&logo=gmail&logoColor=white)](mailto:cole@staymellow.ai)
+[![Portfolio](https://img.shields.io/badge/Portfolio-colemcintosh.io-0A0A0A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.colemcintosh.io/)
+[![Mellow AI](https://img.shields.io/badge/Mellow_AI-staymellow.ai-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://staymellow.ai/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/colemcintosh/)
+[![Email](https://img.shields.io/badge/Email-Say_Hi-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:cole@staymellow.ai)
 
 </div>
 
-<br/>
+---
 
-> *I think the best AI work happens at the seams -- where a model's output meets a user's intent and the interface has to earn trust in real time. That's the space I live in. Agentic workflows, RAG pipelines, structured extraction, the full vertical from prompt to pixel.*
->
-> *I've shipped production systems across AWS, Azure, and GCP, and I contribute to open-source projects that make this stack more approachable. Not because simple is easy, but because clarity is a feature.*
+### Tech Stack
 
-<br/>
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 
-<table>
-<tr><td colspan="2"><b>What I Work With</b></td></tr>
-<tr>
-<td><b>Languages</b></td>
-<td><code>TypeScript</code> <code>Python</code></td>
-</tr>
-<tr>
-<td><b>Frameworks</b></td>
-<td><code>Next.js</code> <code>React</code> <code>Node.js</code> <code>LangChain</code></td>
-</tr>
-<tr>
-<td><b>Infra</b></td>
-<td><code>AWS</code> <code>Azure</code> <code>GCP</code></td>
-</tr>
-</table>
+### Selected Work
 
-<br/>
+| Project | Description |
+| --- | --- |
+| [**openextract**](https://github.com/Mellow-Artificial-Intelligence/openextract) | Structured extraction from documents, images, audio, and video using LLMs |
+| [**langchain-salesforce**](https://github.com/colesmcintosh/langchain-salesforce) | LangChain integration for Salesforce CRM — SOQL, schema, CRUD |
+| [**vector-vault**](https://github.com/colesmcintosh/vector-vault) | High-performance vector similarity search with LSH, in Go |
+| [**pdfmd**](https://github.com/colesmcintosh/pdfmd) | Fast PDF to Markdown converter in Rust |
+| [**pycuda-numpy-vector-ops**](https://github.com/colesmcintosh/pycuda-numpy-vector-ops) | Accelerating NumPy vector operations with PyCUDA |
 
-<table>
-<tr><td colspan="2"><b>Things I've Built</b></td></tr>
-<tr>
-<td><a href="https://github.com/Mellow-Artificial-Intelligence/open-xtract" target="_blank" rel="noopener noreferrer"><b>Open Xtract</b></a></td>
-<td>LLM-powered structured data extraction with durable execution</td>
-</tr>
-<tr>
-<td><a href="https://github.com/colesmcintosh/langchain-salesforce" target="_blank" rel="noopener noreferrer"><b>LangChain Salesforce</b></a></td>
-<td>LangChain integration for Salesforce CRM -- SOQL, schema inspection, CRUD</td>
-</tr>
-<tr>
-<td><a href="https://github.com/colesmcintosh/how-to-deepseek-ocr" target="_blank" rel="noopener noreferrer"><b>How To DeepSeek OCR</b></a></td>
-<td>Running DeepSeek-OCR on a single A100 40GB GPU</td>
-</tr>
-</table>
+### Open Source Contributions
 
-<br/>
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)](https://github.com/langchain-ai/langchain)
+[![SmolAgents](https://img.shields.io/badge/SmolAgents-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://github.com/huggingface/smolagents)
+[![LiteLLM](https://img.shields.io/badge/LiteLLM-091F40?style=flat-square&logoColor=white)](https://github.com/BerriAI/litellm)
 
-<table>
-<tr><td colspan="2"><b>Where I've Contributed</b></td></tr>
-<tr>
-<td><a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener noreferrer"><b>LangChain</b></a></td>
-<td>The framework for building LLM apps and agents</td>
-</tr>
-<tr>
-<td><a href="https://github.com/huggingface/smolagents" target="_blank" rel="noopener noreferrer"><b>SmolAgents</b></a></td>
-<td>HuggingFace's lightweight agent framework</td>
-</tr>
-<tr>
-<td><a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener noreferrer"><b>LiteLLM</b></a></td>
-<td>Open-source gateway for 100+ LLM APIs</td>
-</tr>
-</table>
-
-<br/>
+---
 
 <div align="center">
-  <sub>Clarity is a feature.</sub>
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=colesmcintosh&show_icons=true&hide_border=true&theme=transparent&hide=issues&count_private=true)
+
 </div>
