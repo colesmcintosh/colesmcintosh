@@ -30,7 +30,7 @@ Building AI systems that earn trust — agents, RAG, and structured extraction.
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 
-### Selected Work
+### Projects
 
 | Project | Description |
 | --- | --- |
