@@ -1,20 +1,36 @@
-# Cole McIntosh
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+  <img alt="Cole McIntosh — a particle field crystallising into the letters of the name" src="assets/banner-light.svg" width="100%">
+</picture>
 
-**Full-stack engineer and founder building dependable AI products.**
+### Cole McIntosh
 
-I design and ship production systems across the stack—from model integrations and data pipelines to the interfaces people use. My current focus is agentic workflows, structured extraction, and developer tools that make AI systems easier to trust and operate.
+Founder @ [Mellow AI](https://staymellow.ai/) &nbsp;|&nbsp; [GitHub](https://github.com/colesmcintosh) · [LinkedIn](https://www.linkedin.com/in/colemcintosh/) · [X](https://x.com/colesmcintosh) · [Email](mailto:cole@staymellow.ai) &nbsp;|&nbsp; [Website](https://www.colemcintosh.io/)
 
-[Website](https://www.colemcintosh.io/) · [Mellow AI](https://staymellow.ai/) · [LinkedIn](https://www.linkedin.com/in/colemcintosh/) · [Email](mailto:cole@staymellow.ai)
+I build agents and extraction systems that take work off the table for real teams. The bar is production quality — I own the system through launch, reliability, and the failure modes that only show up in real use.
+
+`TypeScript` · `Python` · `Rust` · `Go`
+
+<img src="assets/rule.svg" width="100%" alt="">
 
 ## Projects
 
-| Project | What it does |
-| --- | --- |
-| [OpenExtract](https://github.com/Mellow-Artificial-Intelligence/openextract) | Turns documents, images, audio, and video into validated Pydantic models. |
-| [LangChain Salesforce](https://github.com/colesmcintosh/langchain-salesforce) | Adds SOQL queries, schema inspection, and CRUD operations to LangChain. |
-| [pdfmd](https://github.com/colesmcintosh/pdfmd) | Converts PDF files to Markdown with a fast Rust-based pipeline. |
-| [Vector Vault](https://github.com/colesmcintosh/vector-vault) | Implements approximate vector search in Go using locality-sensitive hashing. |
-| [PyCUDA NumPy Vector Ops](https://github.com/colesmcintosh/pycuda-numpy-vector-ops) | Accelerates NumPy vector operations with PyCUDA. |
+<p>
+<a href="https://github.com/Mellow-Artificial-Intelligence/openextract"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-openextract-dark.svg"><img src="assets/card-openextract-light.svg" alt="OpenExtract — documents, images, audio, and video into validated Pydantic models" width="48%"></picture></a>
+<a href="https://github.com/colesmcintosh/langchain-salesforce"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-langchain-salesforce-dark.svg"><img src="assets/card-langchain-salesforce-light.svg" alt="LangChain Salesforce — SOQL queries, schema inspection, and CRUD operations for LangChain" width="48%"></picture></a>
+</p>
+
+<p>
+<a href="https://github.com/colesmcintosh/pdfmd"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-pdfmd-dark.svg"><img src="assets/card-pdfmd-light.svg" alt="pdfmd — PDF files converted to Markdown by a fast Rust pipeline" width="48%"></picture></a>
+<a href="https://github.com/colesmcintosh/vector-vault"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-vector-vault-dark.svg"><img src="assets/card-vector-vault-light.svg" alt="Vector Vault — approximate vector search in Go, via locality-sensitive hashing" width="48%"></picture></a>
+</p>
+
+<p>
+<a href="https://github.com/colesmcintosh/pycuda-numpy-vector-ops"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-pycuda-numpy-vector-ops-dark.svg"><img src="assets/card-pycuda-numpy-vector-ops-light.svg" alt="PyCUDA NumPy Vector Ops — NumPy vector operations accelerated with PyCUDA kernels" width="48%"></picture></a>
+</p>
+
+<img src="assets/rule.svg" width="100%" alt="">
 
 ## Open source
 
@@ -22,7 +38,30 @@ Contributions include [LangChain](https://github.com/langchain-ai/langchain/pull
 
 ## Toolkit
 
-- **Languages:** TypeScript, Python, Rust, Go
-- **Applications:** Next.js, React, Node.js
-- **AI:** Pydantic AI, LangChain, retrieval, agents, structured outputs
-- **Infrastructure:** AWS, Azure, Google Cloud
+**Languages** TypeScript, Python, Rust, Go &nbsp;·&nbsp; **Applications** Next.js, React, Node.js<br>
+**AI** Pydantic AI, LangChain, retrieval, agents, structured outputs &nbsp;·&nbsp; **Infrastructure** AWS, Azure, Google Cloud
+
+<img src="assets/rule.svg" width="100%" alt="">
+
+## About the artwork
+
+The banner isn't a picture of anything. It's a simulation, and it makes the same argument the work does: **structure is not authored, it is what survives the constraints.**
+
+A coherence gradient rises from left to right across the canvas. On the left it is zero, so every particle takes its heading straight from layered Perlin noise and draws the filaments of an unconstrained flow. As coherence climbs, each heading eases toward the nearest cardinal axis and each step snaps to the lattice pitch — turbulence becomes circuitry, one particle at a time. A mask of lattice cells sits in the middle as a constraint: particles that pass through a masked cell deposit energy there and it brightens, and particles that satisfy nothing leave dim residue. The name is never drawn. It accumulates, hit by hit, out of the traversals that happened to be valid.
+
+Everything is a pure function of its seed, so the banner, the dividers, and every project card come from one deterministic system:
+
+| File | Role |
+| --- | --- |
+| [`art/PHILOSOPHY.md`](art/PHILOSOPHY.md) | The movement — Schema Drift, stated as an aesthetic position. |
+| [`art/schema-drift.js`](art/schema-drift.js) | The field: seeded PRNG, Perlin noise, the coherence gradient, the 5×7 lattice font. |
+| [`art/render.js`](art/render.js) | Renders every SVG in [`assets/`](assets). No canvas, no rasterising — vectors all the way down. |
+| [`art/viewer.html`](art/viewer.html) | An interactive p5.js viewer. Open it in a browser and watch a seed crystallise. |
+
+```bash
+node art/render.js              # rebuild the assets at the committed seed
+node art/render.js --seed 88    # a different signature entirely
+open art/viewer.html            # sliders, seed navigation, your own constraint text
+```
+
+<sub>Schema Drift · seed 2317 · rendered from `art/render.js` — no dependencies, no build step.</sub>

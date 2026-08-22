@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!--
+    Schema Drift — an interactive viewer for the generative system behind this profile.
+    Open this file in any browser: it needs no build step and no server.
+    The algorithm is documented in art/PHILOSOPHY.md; art/render.js renders the README assets.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Drift — generative viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Anthropic Brand Colors */
+        :root {
+            --anthropic-dark: #141413;
+            --anthropic-light: #faf9f5;
+            --anthropic-mid-gray: #b0aea5;
+            --anthropic-light-gray: #e8e6dc;
+            --anthropic-orange: #d97757;
+            --anthropic-blue: #6a9bcc;
+            --anthropic-green: #788c5d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--anthropic-light) 0%, #f5f3ee 100%);
+            min-height: 100vh;
+            color: var(--anthropic-dark);
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(20, 20, 19, 0.1);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .sidebar h1 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--anthropic-dark);
+            margin-bottom: 8px;
+        }
+
+        .sidebar .subtitle {
+            color: var(--anthropic-mid-gray);
+            font-size: 14px;
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+
+        /* Control Sections */
+        .control-section {
+            margin-bottom: 32px;
+        }
+
+        .control-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--anthropic-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-section h3::before {
+            content: '•';
+            color: var(--anthropic-orange);
+            font-weight: bold;
+        }
+
+        /* Seed Controls */
+        .seed-input {
+            width: 100%;
+            background: var(--anthropic-light);
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin-bottom: 12px;
+            border: 1px solid var(--anthropic-light-gray);
+            text-align: center;
+        }
+
+        .seed-input:focus {
+            outline: none;
+            border-color: var(--anthropic-orange);
+            box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.1);
+            background: white;
+        }
+
+        .seed-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .regen-button {
+            margin-bottom: 0;
+        }
+
+        /* Parameter Controls */
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--anthropic-dark);
+            margin-bottom: 8px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slider-container input[type="range"] {
+            flex: 1;
+            height: 4px;
+            background: var(--anthropic-light-gray);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--anthropic-orange);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .slider-container input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            background: #c86641;
+        }
+
+        .slider-container input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--anthropic-orange);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .value-display {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: var(--anthropic-mid-gray);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        /* Color Pickers */
+        .color-group {
+            margin-bottom: 16px;
+        }
+
+        .color-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--anthropic-mid-gray);
+            margin-bottom: 4px;
+        }
+
+        .color-picker-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-picker-container input[type="color"] {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+        }
+
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: var(--anthropic-mid-gray);
+        }
+
+        /* Buttons */
+        .button {
+            background: var(--anthropic-orange);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .button:hover {
+            background: #c86641;
+            transform: translateY(-1px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        .button.secondary {
+            background: var(--anthropic-blue);
+        }
+
+        .button.secondary:hover {
+            background: #5a8bb8;
+        }
+
+        .button.tertiary {
+            background: var(--anthropic-green);
+        }
+
+        .button.tertiary:hover {
+            background: #6b7b52;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .button-row .button {
+            flex: 1;
+        }
+
+        /* Canvas Area */
+        .canvas-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        #canvas-container {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(20, 20, 19, 0.1);
+            background: white;
+        }
+
+        #canvas-container canvas {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--anthropic-mid-gray);
+        }
+
+        /* Responsive - Stack on mobile */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .canvas-area {
+                padding: 20px;
+            }
+        }
+    </style>
+</head><body>
+    <div class="container">
+        <!-- Control Sidebar -->
+        <div class="sidebar">
+            <h1>Schema Drift</h1>
+            <div class="subtitle">A coherence gradient rises left to right. Noise becomes lattice, and the constraint text surfaces out of the particles that satisfy it.</div>
+
+            <!-- Seed Section -->
+            <div class="control-section">
+                <h3>Seed</h3>
+                <input type="number" id="seed-input" class="seed-input" value="2317" onchange="updateSeed()">
+                <div class="seed-controls">
+                    <button class="button secondary" onclick="previousSeed()">← Prev</button>
+                    <button class="button secondary" onclick="nextSeed()">Next →</button>
+                </div>
+                <button class="button tertiary regen-button" onclick="randomSeedAndUpdate()">↻ Random</button>
+            </div>
+
+            <!-- Parameters Section -->
+            <div class="control-section">
+                <h3>Field</h3>
+
+                <div class="control-group">
+                    <label>Constraint text</label>
+                    <input type="text" id="maskText" class="seed-input" value="COLE MCINTOSH" oninput="updateText(this.value)">
+                </div>
+
+                <div class="control-group">
+                    <label>Particles</label>
+                    <div class="slider-container">
+                        <input type="range" id="particles" min="200" max="2600" step="50" value="1050" oninput="updateParam('particles', this.value)">
+                        <span class="value-display" id="particles-value">1050</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Filament length</label>
+                    <div class="slider-container">
+                        <input type="range" id="steps" min="8" max="70" step="1" value="30" oninput="updateParam('steps', this.value)">
+                        <span class="value-display" id="steps-value">30</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Noise scale</label>
+                    <div class="slider-container">
+                        <input type="range" id="noiseScale" min="0.001" max="0.012" step="0.0001" value="0.0029" oninput="updateParam('noiseScale', this.value)">
+                        <span class="value-display" id="noiseScale-value">0.0029</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Turbulence</label>
+                    <div class="slider-container">
+                        <input type="range" id="turbulence" min="0.3" max="2.6" step="0.05" value="1.4" oninput="updateParam('turbulence', this.value)">
+                        <span class="value-display" id="turbulence-value">1.4</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Drift</label>
+                    <div class="slider-container">
+                        <input type="range" id="drift" min="0" max="1" step="0.02" value="0.46" oninput="updateParam('drift', this.value)">
+                        <span class="value-display" id="drift-value">0.46</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Order</h3>
+
+                <div class="control-group">
+                    <label>Onset of coherence</label>
+                    <div class="slider-container">
+                        <input type="range" id="orderStart" min="0" max="0.7" step="0.01" value="0.1" oninput="updateParam('orderStart', this.value)">
+                        <span class="value-display" id="orderStart-value">0.1</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Quantize easing</label>
+                    <div class="slider-container">
+                        <input type="range" id="quantize" min="0.6" max="3.5" step="0.05" value="1.7" oninput="updateParam('quantize', this.value)">
+                        <span class="value-display" id="quantize-value">1.7</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Lattice pitch</label>
+                    <div class="slider-container">
+                        <input type="range" id="cell" min="6" max="26" step="1" value="12" oninput="updateParam('cell', this.value)">
+                        <span class="value-display" id="cell-value">12</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Evidence bias</label>
+                    <div class="slider-container">
+                        <input type="range" id="maskBias" min="0" max="0.8" step="0.02" value="0.44" oninput="updateParam('maskBias', this.value)">
+                        <span class="value-display" id="maskBias-value">0.44</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colors Section -->
+            <div class="control-section">
+                <h3>Colors</h3>
+
+                <div class="color-group">
+                    <label>Entropy</label>
+                    <div class="color-picker-container">
+                        <input type="color" id="color1" value="#f97316" onchange="updateColor('color1', this.value)">
+                        <span class="color-value" id="color1-value">#f97316</span>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <label>Transition</label>
+                    <div class="color-picker-container">
+                        <input type="color" id="color2" value="#dd8a4a" onchange="updateColor('color2', this.value)">
+                        <span class="color-value" id="color2-value">#dd8a4a</span>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <label>Order</label>
+                    <div class="color-picker-container">
+                        <input type="color" id="color3" value="#111827" onchange="updateColor('color3', this.value)">
+                        <span class="color-value" id="color3-value">#111827</span>
+                    </div>
+                </div>
+
+                <div class="color-group">
+                    <label>Ground</label>
+                    <div class="color-picker-container">
+                        <input type="color" id="color4" value="#ffffff" onchange="updateColor('color4', this.value)">
+                        <span class="color-value" id="color4-value">#ffffff</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions Section -->
+            <div class="control-section">
+                <h3>Actions</h3>
+                <div class="button-row">
+                    <button class="button" onclick="initializeSystem()">Regenerate</button>
+                    <button class="button secondary" onclick="resetParameters()">Reset</button>
+                </div>
+                <div class="button-row" style="margin-top:8px">
+                    <button class="button tertiary" onclick="downloadPNG()">Download PNG</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Canvas Area -->
+        <div class="canvas-area">
+            <div id="canvas-container">
+                <div class="loading">Initializing generative art...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════
+        // SCHEMA DRIFT — PARAMETERS
+        // ═══════════════════════════════════════════════════════════════════════
+
+        let params = {
+            seed: 2317,
+            text: 'COLE MCINTOSH',
+            particles: 1050,
+            steps: 30,
+            noiseScale: 0.0029,
+            turbulence: 1.4,
+            drift: 0.46,
+            orderStart: 0.1,
+            quantize: 1.7,
+            cell: 12,
+            maskBias: 0.44,
+            colorPalette: ['#f97316', '#dd8a4a', '#111827', '#ffffff']
+        };
+
+        let defaultParams = JSON.parse(JSON.stringify(params));
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // A 5x7 LATTICE FONT — the constraint the field is tested against
+        // ═══════════════════════════════════════════════════════════════════════
+
+        const GLYPHS = {
+            A:'.###.|#...#|#...#|#####|#...#|#...#|#...#', B:'####.|#...#|#...#|####.|#...#|#...#|####.',
+            C:'.###.|#...#|#....|#....|#....|#...#|.###.', D:'####.|#...#|#...#|#...#|#...#|#...#|####.',
+            E:'#####|#....|#....|####.|#....|#....|#####', F:'#####|#....|#....|####.|#....|#....|#....',
+            G:'.###.|#...#|#....|#.###|#...#|#...#|.###.', H:'#...#|#...#|#...#|#####|#...#|#...#|#...#',
+            I:'#####|..#..|..#..|..#..|..#..|..#..|#####', J:'..###|...#.|...#.|...#.|...#.|#..#.|.##..',
+            K:'#...#|#..#.|#.#..|##...|#.#..|#..#.|#...#', L:'#....|#....|#....|#....|#....|#....|#####',
+            M:'#...#|##.##|#.#.#|#.#.#|#...#|#...#|#...#', N:'#...#|##..#|#.#.#|#.#.#|#..##|#...#|#...#',
+            O:'.###.|#...#|#...#|#...#|#...#|#...#|.###.', P:'####.|#...#|#...#|####.|#....|#....|#....',
+            Q:'.###.|#...#|#...#|#...#|#.#.#|#..#.|.##.#', R:'####.|#...#|#...#|####.|#.#..|#..#.|#...#',
+            S:'.####|#....|#....|.###.|....#|....#|####.', T:'#####|..#..|..#..|..#..|..#..|..#..|..#..',
+            U:'#...#|#...#|#...#|#...#|#...#|#...#|.###.', V:'#...#|#...#|#...#|#...#|#...#|.#.#.|..#..',
+            W:'#...#|#...#|#...#|#.#.#|#.#.#|##.##|#...#', X:'#...#|#...#|.#.#.|..#..|.#.#.|#...#|#...#',
+            Y:'#...#|#...#|.#.#.|..#..|..#..|..#..|..#..', Z:'#####|....#|...#.|..#..|.#...|#....|#####',
+            '0':'.###.|#...#|#..##|#.#.#|##..#|#...#|.###.', '1':'..#..|.##..|..#..|..#..|..#..|..#..|.###.',
+            '2':'.###.|#...#|....#|...#.|..#..|.#...|#####', '3':'####.|....#|....#|.###.|....#|....#|####.',
+            '4':'#...#|#...#|#...#|#####|....#|....#|....#', '5':'#####|#....|####.|....#|....#|#...#|.###.',
+            '6':'.###.|#....|#....|####.|#...#|#...#|.###.', '7':'#####|....#|...#.|..#..|.#...|.#...|.#...',
+            '8':'.###.|#...#|#...#|.###.|#...#|#...#|.###.', '9':'.###.|#...#|#...#|.####|....#|....#|.###.',
+            '.':'.....|.....|.....|.....|.....|.##..|.##..', '-':'.....|.....|.....|#####|.....|.....|.....',
+            ' ':'.....|.....|.....|.....|.....|.....|.....'
+        };
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // THE FIELD
+        // ═══════════════════════════════════════════════════════════════════════
+
+        const W = 1200, H = 400;
+        let particles = [];
+        let maskCells = new Set();
+        let maskBounds = null;
+        let deposits = new Map();
+        let maxHits = 1;
+        let settled = false;
+
+        function coherenceAt(x) {
+            const t = constrain((x - params.orderStart * W) / ((0.86 - params.orderStart) * W), 0, 1);
+            return t * t * (3 - 2 * t);
+        }
+
+        function buildMask() {
+            const cell = params.cell;
+            const chars = (params.text || '').toUpperCase().split('');
+            maskCells = new Set();
+            if (!chars.length) { maskBounds = null; return; }
+            const widthCells = chars.length * 6 - 1;
+            const originCol = Math.round(W / 2 / cell - widthCells / 2);
+            const originRow = Math.round(126 / cell);
+            chars.forEach((ch, i) => {
+                const rows = (GLYPHS[ch] || GLYPHS[' ']).split('|');
+                rows.forEach((row, r) => {
+                    for (let c = 0; c < 5; c++) {
+                        if (row[c] === '#') maskCells.add((originCol + i * 6 + c) + ',' + (originRow + r));
+                    }
+                });
+            });
+            maskBounds = {
+                x: originCol * cell, y: originRow * cell,
+                width: widthCells * cell, height: 7 * cell
+            };
+        }
+
+        class Particle {
+            constructor() {
+                if (maskBounds && random() < params.maskBias) {
+                    this.x = maskBounds.x - params.cell * 2 + random(maskBounds.width + params.cell * 4);
+                    this.y = maskBounds.y - params.cell * 1.5 + random(maskBounds.height + params.cell * 3);
+                } else {
+                    this.x = random(-40, W + 40);
+                    this.y = random(-30, H + 30);
+                }
+                this.energy = random();
+                this.heading = null;
+                // Staggered births: the field fills in over a few seconds instead of at once.
+                this.birth = random(0, 90);
+                // Certainty is short-lived: settled particles travel less.
+                this.life = max(3, round(params.steps * random(0.55, 1.4) * (1 - 0.72 * coherenceAt(this.x))));
+            }
+
+            step() {
+                if (this.life-- <= 0) return false;
+                const c = coherenceAt(this.x);
+                const n = noise(this.x * params.noiseScale, this.y * params.noiseScale, 12.7);
+                let theta = (n - 0.5) * TWO_PI * params.turbulence * 2;
+                theta = lerpAngle(theta, 0, params.drift * (0.45 + 0.55 * c));
+                if (c > 0.001) {
+                    const snapped = round(theta / HALF_PI) * HALF_PI;
+                    theta = lerpAngle(theta, snapped, pow(c, params.quantize));
+                }
+                if (this.heading !== null) theta = lerpAngle(this.heading, theta, 0.72);
+                this.heading = theta;
+
+                const stepLength = lerp(5.4, params.cell, pow(c, 2.2));
+                const px = this.x, py = this.y;
+                this.x += cos(theta) * stepLength;
+                this.y += sin(theta) * stepLength;
+                if (this.x < -60 || this.x > W + 60 || this.y < -60 || this.y > H + 60) return false;
+
+                stroke(trailColor(c, this.energy));
+                strokeWeight(0.65 + 0.95 * c);
+                line(px, py, this.x, this.y);
+
+                const key = floor(this.x / params.cell) + ',' + floor(this.y / params.cell);
+                if (maskCells.has(key)) {
+                    const d = deposits.get(key);
+                    if (d) { d.hits++; maxHits = max(maxHits, d.hits); } else deposits.set(key, { hits: 1, masked: true });
+                } else if (c > 0.42 && random() < c * 0.18) {
+                    const d = deposits.get(key);
+                    if (d) d.hits++; else deposits.set(key, { hits: 1, masked: false });
+                }
+                return true;
+            }
+        }
+
+        function lerpAngle(a, b, t) {
+            let d = ((b - a + PI) % TWO_PI) - PI;
+            if (d < -PI) d += TWO_PI;
+            return a + d * t;
+        }
+
+        function paletteAt(t) {
+            const stops = params.colorPalette.slice(0, 3).map((c) => color(c));
+            const s = constrain(t, 0, 1) * (stops.length - 1);
+            const i = min(floor(s), stops.length - 2);
+            return lerpColor(stops[i], stops[i + 1], s - i);
+        }
+
+        function trailColor(c, energy) {
+            const col = paletteAt(c);
+            // Ink thins as certainty rises: the ordered half stays quiet enough to read.
+            col.setAlpha(255 * 0.34 * (0.5 + 0.7 * energy) * (1 - 0.62 * c));
+            return col;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // P5 LIFECYCLE
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function setup() {
+            const canvas = createCanvas(W, H);
+            canvas.parent('canvas-container');
+            pixelDensity(1);
+            initializeSystem();
+            const loading = document.querySelector('.loading');
+            if (loading) loading.style.display = 'none';
+        }
+
+        function initializeSystem() {
+            randomSeed(params.seed);
+            noiseSeed(params.seed);
+            deposits = new Map();
+            maxHits = 1;
+            settled = false;
+
+            buildMask();
+            background(params.colorPalette[3]);
+            drawLattice();
+
+            particles = [];
+            for (let i = 0; i < params.particles; i++) particles.push(new Particle());
+            loop();
+        }
+
+        function drawLattice() {
+            const grid = color(params.colorPalette[2]);
+            strokeWeight(0.5);
+            for (let x = 0; x <= W; x += params.cell * 2) {
+                grid.setAlpha(255 * 0.09 * (0.15 + 0.85 * coherenceAt(x)));
+                stroke(grid);
+                line(x, 0, x, H);
+            }
+            grid.setAlpha(255 * 0.04);
+            stroke(grid);
+            for (let y = 0; y <= H; y += params.cell * 2) line(W * 0.34, y, W, y);
+        }
+
+        function draw() {
+            if (settled) return;
+            // One step per frame: the crystallisation is the performance, not the result.
+            let alive = false;
+            for (const p of particles) {
+                if (frameCount < p.birth) { alive = true; continue; }
+                if (p.step()) alive = true;
+            }
+            if (!alive) {
+                drawDeposits();
+                settled = true;
+                noLoop();
+            }
+        }
+
+        function drawDeposits() {
+            noStroke();
+            const cell = params.cell;
+            // Evidence that satisfied no constraint stays as residue.
+            deposits.forEach((entry, key) => {
+                if (entry.masked) return;
+                const [cx, cy] = key.split(',').map(Number);
+                const col = color(params.colorPalette[2]);
+                col.setAlpha(255 * min(0.2, 0.05 + entry.hits * 0.035));
+                fill(col);
+                rect(cx * cell + cell * 0.32, cy * cell + cell * 0.32, cell * 0.36, cell * 0.36);
+            });
+            // The figure is never drawn — it is what survives.
+            maskCells.forEach((key) => {
+                const [cx, cy] = key.split(',').map(Number);
+                const entry = deposits.get(key);
+                const t = entry ? constrain(entry.hits / max(3, maxHits * 0.55), 0, 1) : 0;
+                const col = paletteAt(constrain(coherenceAt(cx * cell) * 0.86 + t * 0.24, 0, 1));
+                col.setAlpha(255 * (entry ? 0.8 + 0.2 * t : 0.34));
+                fill(col);
+                rect(cx * cell + cell * 0.1, cy * cell + cell * 0.1, cell * 0.8, cell * 0.8, 1.6);
+            });
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // UI CONTROL HANDLERS
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function updateParam(name, value) {
+            params[name] = parseFloat(value);
+            document.getElementById(name + '-value').textContent = value;
+            initializeSystem();
+        }
+
+        function updateText(value) {
+            params.text = value;
+            initializeSystem();
+        }
+
+        function updateColor(id, value) {
+            const index = { color1: 0, color2: 1, color3: 2, color4: 3 }[id];
+            params.colorPalette[index] = value;
+            document.getElementById(id + '-value').textContent = value;
+            initializeSystem();
+        }
+
+        function downloadPNG() {
+            saveCanvas('schema-drift-' + params.seed, 'png');
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // SEED CONTROL FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════
+
+        function updateSeedDisplay() {
+            document.getElementById('seed-input').value = params.seed;
+        }
+
+        function updateSeed() {
+            const input = document.getElementById('seed-input');
+            const newSeed = parseInt(input.value);
+            if (newSeed && newSeed > 0) {
+                params.seed = newSeed;
+                initializeSystem();
+            } else {
+                updateSeedDisplay();
+            }
+        }
+
+        function previousSeed() {
+            params.seed = Math.max(1, params.seed - 1);
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        function nextSeed() {
+            params.seed = params.seed + 1;
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        function randomSeedAndUpdate() {
+            params.seed = Math.floor(Math.random() * 999999) + 1;
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        function resetParameters() {
+            params = JSON.parse(JSON.stringify(defaultParams));
+            ['particles', 'steps', 'noiseScale', 'turbulence', 'drift', 'orderStart', 'quantize', 'cell', 'maskBias'].forEach((name) => {
+                document.getElementById(name).value = params[name];
+                document.getElementById(name + '-value').textContent = params[name];
+            });
+            ['color1', 'color2', 'color3', 'color4'].forEach((id, i) => {
+                document.getElementById(id).value = params.colorPalette[i];
+                document.getElementById(id + '-value').textContent = params.colorPalette[i];
+            });
+            document.getElementById('maskText').value = params.text;
+            updateSeedDisplay();
+            initializeSystem();
+        }
+
+        window.addEventListener('load', updateSeedDisplay);
+    </script>
+</body>
+</html>
