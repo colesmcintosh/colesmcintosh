@@ -40,28 +40,3 @@ Contributions include [LangChain](https://github.com/langchain-ai/langchain/pull
 
 **Languages** TypeScript, Python, Rust, Go &nbsp;·&nbsp; **Applications** Next.js, React, Node.js<br>
 **AI** Pydantic AI, LangChain, retrieval, agents, structured outputs &nbsp;·&nbsp; **Infrastructure** AWS, Azure, Google Cloud
-
-<img src="assets/rule.svg" width="100%" alt="">
-
-## About the artwork
-
-The banner isn't a picture of anything. It's a simulation, and it makes the same argument the work does: **structure is not authored, it is what survives the constraints.**
-
-A coherence gradient rises from left to right across the canvas. On the left it is zero, so every particle takes its heading straight from layered Perlin noise and draws the filaments of an unconstrained flow. As coherence climbs, each heading eases toward the nearest cardinal axis and each step snaps to the lattice pitch — turbulence becomes circuitry, one particle at a time. A mask of lattice cells sits in the middle as a constraint: particles that pass through a masked cell deposit energy there and it brightens, and particles that satisfy nothing leave dim residue. The name is never drawn. It accumulates, hit by hit, out of the traversals that happened to be valid.
-
-Everything is a pure function of its seed, so the banner, the dividers, and every project card come from one deterministic system:
-
-| File | Role |
-| --- | --- |
-| [`art/PHILOSOPHY.md`](art/PHILOSOPHY.md) | The movement — Schema Drift, stated as an aesthetic position. |
-| [`art/schema-drift.js`](art/schema-drift.js) | The field: seeded PRNG, Perlin noise, the coherence gradient, the 5×7 lattice font. |
-| [`art/render.js`](art/render.js) | Renders every SVG in [`assets/`](assets). No canvas, no rasterising — vectors all the way down. |
-| [`art/viewer.html`](art/viewer.html) | An interactive p5.js viewer. Open it in a browser and watch a seed crystallise. |
-
-```bash
-node art/render.js              # rebuild the assets at the committed seed
-node art/render.js --seed 88    # a different signature entirely
-open art/viewer.html            # sliders, seed navigation, your own constraint text
-```
-
-<sub>Schema Drift · seed 2317 · rendered from `art/render.js` — no dependencies, no build step.</sub>
