@@ -37,13 +37,14 @@ proposition: validated output is not authored, it is what survives the constrain
 
 ## Color as a temperature of certainty
 
-The palette is a thermometer for coherence. Warm, dispersed pigment marks the entropic region —
-signal that has not yet been resolved. Cool, crystalline pigment marks the validated region. Each
-trail is colored by the coherence at its own position, so a single filament cools as it travels,
-and the composition's temperature gradient becomes a read-out of the algorithm's internal state.
-Opacity follows velocity and age: fast, young particles burn; settled ones recede to residue. The
-palette must be tuned with the restraint of a master colorist — three or four pigments, no more,
-each earning its place, none of them arbitrary RGB.
+The palette is a thermometer for coherence, and it is deliberately narrow: paper, ink, and a single
+ember. Warm dispersed pigment marks the entropic region — signal that has not yet been resolved.
+Ink marks the validated region, because resolved signal should look like something that was set in
+type rather than something that glows. Each trail is colored by the coherence at its own position,
+so a single filament cools as it travels, and the composition's gradient becomes a read-out of the
+algorithm's internal state. Opacity follows energy and certainty: young particles burn, settled ones
+thin to residue so the ordered half stays quiet enough to read. Restraint is the discipline here —
+three or four pigments, no more, each earning its place, none of them arbitrary RGB.
 
 ## Determinism as authorship
 

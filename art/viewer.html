@@ -427,32 +427,32 @@
                 <div class="color-group">
                     <label>Entropy</label>
                     <div class="color-picker-container">
-                        <input type="color" id="color1" value="#ef6f45" onchange="updateColor('color1', this.value)">
-                        <span class="color-value" id="color1-value">#ef6f45</span>
+                        <input type="color" id="color1" value="#f97316" onchange="updateColor('color1', this.value)">
+                        <span class="color-value" id="color1-value">#f97316</span>
                     </div>
                 </div>
 
                 <div class="color-group">
                     <label>Transition</label>
                     <div class="color-picker-container">
-                        <input type="color" id="color2" value="#e0995a" onchange="updateColor('color2', this.value)">
-                        <span class="color-value" id="color2-value">#e0995a</span>
+                        <input type="color" id="color2" value="#dd8a4a" onchange="updateColor('color2', this.value)">
+                        <span class="color-value" id="color2-value">#dd8a4a</span>
                     </div>
                 </div>
 
                 <div class="color-group">
                     <label>Order</label>
                     <div class="color-picker-container">
-                        <input type="color" id="color3" value="#7fe0cf" onchange="updateColor('color3', this.value)">
-                        <span class="color-value" id="color3-value">#7fe0cf</span>
+                        <input type="color" id="color3" value="#111827" onchange="updateColor('color3', this.value)">
+                        <span class="color-value" id="color3-value">#111827</span>
                     </div>
                 </div>
 
                 <div class="color-group">
                     <label>Ground</label>
                     <div class="color-picker-container">
-                        <input type="color" id="color4" value="#0b0e12" onchange="updateColor('color4', this.value)">
-                        <span class="color-value" id="color4-value">#0b0e12</span>
+                        <input type="color" id="color4" value="#ffffff" onchange="updateColor('color4', this.value)">
+                        <span class="color-value" id="color4-value">#ffffff</span>
                     </div>
                 </div>
             </div>
@@ -495,7 +495,7 @@
             quantize: 1.7,
             cell: 12,
             maskBias: 0.44,
-            colorPalette: ['#ef6f45', '#e0995a', '#7fe0cf', '#0b0e12']
+            colorPalette: ['#f97316', '#dd8a4a', '#111827', '#ffffff']
         };
 
         let defaultParams = JSON.parse(JSON.stringify(params));
@@ -671,7 +671,7 @@
             const grid = color(params.colorPalette[2]);
             strokeWeight(0.5);
             for (let x = 0; x <= W; x += params.cell * 2) {
-                grid.setAlpha(255 * 0.07 * (0.15 + 0.85 * coherenceAt(x)));
+                grid.setAlpha(255 * 0.09 * (0.15 + 0.85 * coherenceAt(x)));
                 stroke(grid);
                 line(x, 0, x, H);
             }
@@ -713,7 +713,7 @@
                 const entry = deposits.get(key);
                 const t = entry ? constrain(entry.hits / max(3, maxHits * 0.55), 0, 1) : 0;
                 const col = paletteAt(constrain(coherenceAt(cx * cell) * 0.86 + t * 0.24, 0, 1));
-                col.setAlpha(255 * (entry ? 0.68 + 0.32 * t : 0.42));
+                col.setAlpha(255 * (entry ? 0.8 + 0.2 * t : 0.34));
                 fill(col);
                 rect(cx * cell + cell * 0.1, cy * cell + cell * 0.1, cell * 0.8, cell * 0.8, 1.6);
             });
