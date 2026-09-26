@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="340" viewBox="0 0 440 340" role="img" aria-label="Tradewind: Reads every building permit DFW cities issue and emails subcontractors the jobs about to need their trade, dated to the week.">
+<style>
+  .box { fill: #fcfcfc; stroke: #e4e4e7; }
+  .accent { stroke: #12704f; }
+  .wordmark, .name { fill: #18181b; }
+  .caption { fill: #a1a1aa; }
+  .body { fill: #52525b; }
+  @media (prefers-color-scheme: dark) {
+    .box { fill: #0d1117; stroke: #27272a; }
+    .accent { stroke: #34d399; }
+    .wordmark, .name { fill: #f4f4f5; }
+    .caption { fill: #71717a; }
+    .body { fill: #a1a1aa; }
+  }
+</style>
+  <rect class="box" x="0.5" y="0.5" width="439" height="219" rx="16"/>
+  <g class="accent" transform="translate(200.0 58) scale(1.6666666666666667)" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 5h13"/><path d="M6 12h13"/><path d="M9 19h11"/>
+  </g>
+  <text class="wordmark" x="220.0" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="900" letter-spacing="-0.5">Tradewind</text>
+  <text class="caption" x="220.0" y="162" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" letter-spacing="2">CONSTRUCTION LEADS</text>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16">
+  <text class="name" x="4" y="250" font-weight="500">Tradewind</text>
+  <text class="body" x="4" y="278">Reads every building permit DFW cities issue and</text>
+  <text class="body" x="4" y="302">emails subcontractors the jobs about to need their</text>
+  <text class="body" x="4" y="326">trade, dated to the week.</text>
+  </g>
+</svg>

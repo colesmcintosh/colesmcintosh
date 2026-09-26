@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="340" viewBox="0 0 440 340" role="img" aria-label="Nudge: Plans and drafts delinquency outreach for multifamily operators, with human approval.">
+<style>
+  .box { fill: #fcfcfc; stroke: #e4e4e7; }
+  .accent { stroke: #d97706; }
+  .wordmark, .name { fill: #18181b; }
+  .caption { fill: #a1a1aa; }
+  .body { fill: #52525b; }
+  @media (prefers-color-scheme: dark) {
+    .box { fill: #0d1117; stroke: #27272a; }
+    .accent { stroke: #fbbf24; }
+    .wordmark, .name { fill: #f4f4f5; }
+    .caption { fill: #71717a; }
+    .body { fill: #a1a1aa; }
+  }
+</style>
+  <rect class="box" x="0.5" y="0.5" width="439" height="219" rx="16"/>
+  <g class="accent" transform="translate(200.0 58) scale(1.6666666666666667)" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="m9 10 2 2 4-4"/>
+  </g>
+  <text class="wordmark" x="220.0" y="136" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" font-weight="900" letter-spacing="-0.5">Nudge</text>
+  <text class="caption" x="220.0" y="162" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" letter-spacing="2">DELINQUENCY PLANNER</text>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16">
+  <text class="name" x="4" y="250" font-weight="500">Nudge</text>
+  <text class="body" x="4" y="278">Plans and drafts delinquency outreach for</text>
+  <text class="body" x="4" y="302">multifamily operators, with human approval.</text>
+  </g>
+</svg>

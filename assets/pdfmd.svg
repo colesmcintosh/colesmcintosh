@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="340" viewBox="0 0 440 340" role="img" aria-label="pdfmd: A zero-dependency Rust converter that turns PDFs into Markdown in milliseconds.">
+<style>
+  .box { fill: #fcfcfc; stroke: #e4e4e7; }
+  .accent { stroke: #b91c1c; }
+  .wordmark, .name { fill: #18181b; }
+  .caption { fill: #a1a1aa; }
+  .body { fill: #52525b; }
+  @media (prefers-color-scheme: dark) {
+    .box { fill: #0d1117; stroke: #27272a; }
+    .accent { stroke: #DEA584; }
+    .wordmark, .name { fill: #f4f4f5; }
+    .caption { fill: #71717a; }
+    .body { fill: #a1a1aa; }
+  }
+</style>
+  <rect class="box" x="0.5" y="0.5" width="439" height="219" rx="16"/>
+  <g class="accent" transform="translate(200.0 58) scale(1.6666666666666667)" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+  </g>
+  <text class="wordmark" x="220.0" y="136" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26" font-weight="900" letter-spacing="-0.5">pdfmd</text>
+  <text class="caption" x="220.0" y="162" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="500" letter-spacing="2">PDF → MARKDOWN</text>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16">
+  <text class="name" x="4" y="250" font-weight="500">pdfmd</text>
+  <text class="body" x="4" y="278">A zero-dependency Rust converter that turns PDFs</text>
+  <text class="body" x="4" y="302">into Markdown in milliseconds.</text>
+  </g>
+</svg>
