@@ -2,7 +2,7 @@
 
 Founder @ [Mellow AI](https://staymellow.ai/) &nbsp;|&nbsp; [Website](https://www.colemcintosh.io/) · [LinkedIn](https://www.linkedin.com/in/colemcintosh/) · [X](https://x.com/colesmcintosh) · [Email](mailto:cole@staymellow.ai) &nbsp;|&nbsp; [Resume](https://www.colemcintosh.io/resume)
 
-I'm Cole McIntosh, an AI engineer in Dallas, Texas, and the founder of Mellow AI. I build agents and extraction systems that take work off the table for real teams. The bar is production quality. I own the system through launch, reliability, and the failure modes that only show up in real use.
+I'm Cole McIntosh, an AI engineer in Dallas, Texas, and the founder of Mellow AI. I build agents and extraction systems that take work off the table for real teams.
 
 <img src="assets/stack.svg" height="20" alt="TypeScript, Python, Rust">
 
